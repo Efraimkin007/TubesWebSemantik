@@ -13,14 +13,6 @@
     <link rel="stylesheet" type="text/css" href="css/webvowl.app.css" />
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <title>WebVOWL</title>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-90312225-2', 'auto');
-      ga('send', 'pageview');
-    </script>
 </head>
 
 <body>
@@ -145,7 +137,7 @@
                         <div class="converter-form">
                             <input class="hidden" type="file" id="file-converter-input" autocomplete="off">
                             <label class="truncate" id="file-converter-label" for="file-converter-input">Select ontology
-                                file <small>(max. 5MB)</small></label>
+                                file</label>
                             <button type="submit" id="file-converter-button" disabled>
                                 Upload
                             </button>
@@ -224,7 +216,8 @@
                         Vincent Link, Steffen Lohmann, Eduard Marbach, Stefan Negru, Vitalis Wiens
                     </li>
 
-                    <li><a href="http://vowl.visualdataweb.org/webvowl.html#releases" target="_blank">Version: 1.1.7<br />(release history)</a></li>
+                    <li><a href="http://vowl.visualdataweb.org/webvowl.html#releases" target="_blank">Version: <%= version
+                    %><br />(release history)</a></li>
 
                     <li><a href="http://purl.org/vowl/" target="_blank">VOWL Specification &raquo;</a></li>
                 </ul>
