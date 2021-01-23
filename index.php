@@ -27,12 +27,26 @@ include_once "db_function/rss_link_function.php";
 <meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
+
 <body align="center">
-<h1> Tugas Besar Web Semantik - RSS</h1>
-<h2> Dari Kelompok : Efraim, Mathias, Sehat</h2>
+  <h1> Tugas Besar Web Semantik - RSS</h1>
+  <h2> Dari Kelompok : Efraim, Mathias, Sehat</h2>
+        <div style="clear:both;"></div>
+        <!--Tag for content-->
+        <main>
+            <?php
+            $nav = filter_input(INPUT_GET, "navito");
+            $title = '';
+            switch ($nav) {
+                /////Navigasi Beranda
+                case 'home':
+                    include_once './home.php';
+                    $title = 'Beranda';
+                    break;
 
-
-
+                }
+            ?>
+        </main>
 
 </body>
 </html>
