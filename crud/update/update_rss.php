@@ -28,7 +28,7 @@ if(isset($_GET['id'])){
 
 ?>
 
-<form method="POST" action="update.php?id=<?php echo $id ;?>" >
+<form method="POST" action="update.php?id=<?php echo $id ; ?>" >
 <table align="center" class="w3-container w3-light-gray">
 <tr>
 <td align="right">Judul/Title RSS :</td>
@@ -41,6 +41,6 @@ if(isset($_GET['id'])){
 </table>
 
 </br>
-<button type="submit" name="btnUPDTproduk" class="aa-browse-btn">Update</button>
+<button type="submit" class="w3-button w3-blue w3-round-large">Update</button>
 
 </form>
