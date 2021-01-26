@@ -10,9 +10,6 @@ include_once "db_function/rss_link_function.php";
 <head>
 
   <meta charset = "utf-8" />
-  <link rel = "icon" href = "gambar/logo_maranatha.gif">
-
-  <link rel="stylesheet" href="css/pmkmaranatha_css.css">
 
   <!-- tablestyle!-->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -29,8 +26,10 @@ include_once "db_function/rss_link_function.php";
 
 
 <body align="center">
+<section class="w3-container w3-red">
   <h1> Tugas Besar Web Semantik - RSS</h1>
-  <h2> Dari Kelompok : Efraim, Mathias, Sehat</h2>
+  <h2> Dari Kelompok : Efraim, Mathias, Sehat, Kelvin, dan Silvia</h2>
+</section>
         <div style="clear:both;"></div>
         <!--Tag for content-->
         <main>
@@ -38,15 +37,25 @@ include_once "db_function/rss_link_function.php";
             $nav = filter_input(INPUT_GET, "navito");
             $title = '';
             switch ($nav) {
-                /////Navigasi Beranda
+                /////Navigasi
                 case 'home':
-                    include_once './home.php';
-                    $title = 'Beranda';
+                    include_once './crud/read/home.php';
+                    $title = 'Home RSS Link';
+                    break;
+				case 'create_rss':
+                    include_once './crud/create/create_rss.php';
+                    $title = 'Tambahkan RSS Link';
                     break;
 
+				default:
+                    include_once './crud/read/home.php';
+                    $title = 'Home RSS Link';
+                    break;
                 }
             ?>
         </main>
+		<title>
+        <?php  echo $title; ?></title>
 
 </body>
 </html>
