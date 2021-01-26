@@ -42,9 +42,9 @@ include_once "db_function/rss_link_function.php";
                     include_once './crud/read/home.php';
                     $title = 'Home RSS Link';
                     break;
-				case 'create_rss':
-                    include_once './crud/create/create_rss.php';
-                    $title = 'Tambahkan RSS Link';
+				case 'update_rss':
+                    include_once './crud/update/update_rss.php';
+                    $title = 'Update RSS Link';
                     break;
 
 				default:

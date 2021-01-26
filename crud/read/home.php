@@ -2,6 +2,7 @@
 //READ DATA
 $result = selectRSS();
 
+
 //CREATE DATA
 $submitPressed = filter_input(INPUT_POST, "btnSubmit");
 if($submitPressed){
@@ -19,17 +20,9 @@ if(isset($command) && $command == "del"){
 	}
 }
 
-//UPDATE DATA
-$submitPressed2 = filter_input(INPUT_POST,'btnSubmit2');
-if($submitPressed2){
-	$JudulRSS = filter_input(INPUT_POST, "txtJudulRSS");
-	$LinkRSS = filter_input(INPUT_POST, "txtLinkRSS");
-
-	$result2 = updateRSS($JudulRSS, $LinkRSS, $result2);
-}
 
 ?>
-
+<form method="POST" action="" >
 <table align="center" class="w3-container w3-light-gray">
 <tr>
 <td align="right">Judul/Title RSS :</td>
@@ -43,8 +36,9 @@ if($submitPressed2){
 
 
 </br>
-<input name="btnSubmit" type="submit" value="Tambahkan Data Versi 1" class="w3-button w3-blue w3-round-large"/>
-<a href="?navito=create_rss" class="w3-button w3-blue w3-round-large">Tambahkan Data Versi 2</a>
+
+<input name="btnSubmit" type="submit" value="Tambahkan Data" class="w3-button w3-blue w3-round-large"/>
+</form>
 
 </br></br>
 <table align="center" border="center">
@@ -61,7 +55,9 @@ if($submitPressed2){
 <td><?php echo $i; $i+=1; ?></td>
 <td><?php echo $row['title']; ?></td>
 <td><a href="<?php echo $row['link_data_rss']; ?>"><?php echo $row['link_data_rss']; ?></a></td>
-<td><a href="<?php //updateRSS($row['id_link_rss']); ?>" class="w3-button w3-green w3-round-large">Update</a> / <a href="<?php //deleteRSS($row['id_link_rss']); ?>" class="w3-button w3-red w3-round-large">Delete</a> </td>
+<td><a href="?navito=update_rss&&id=<?php echo $row['id_link_rss']; ?>" class="w3-button w3-green w3-round-large">Update</a> /
+<a href=".../../delete.php?id=<?php echo $row['id_link_rss'];?>" class="w3-button w3-red w3-round-large">Delete</a>
+ </td>
 </tr>
 </tbody>
 	<?php } ?>

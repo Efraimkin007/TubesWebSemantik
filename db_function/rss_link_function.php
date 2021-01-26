@@ -12,7 +12,7 @@ function selectRSS(){
 
 function insertRSS($JudulRSS,$LinkRSS){
   $link = createConnection();
-  $query = "INSERT INTO link_rss (title, link_data_rss) VALUES(?, ?);
+  $query = "INSERT INTO link_rss (title, link_data_rss) VALUES(?, ?)";
   $stmt = $link->prepare($query);
   $stmt->bindParam(1,$JudulRSS);
   $stmt->bindParam(2,$LinkRSS);
@@ -31,7 +31,7 @@ function updateRSS($JudulRSS, $LinkRSS, $result){
 	$link = createConnection();
 
 	//UPDATE
-	$query = "UPDATE link_rss SET title=?, link_rss=? WHERE id_link_rss=?"
+	$query = "UPDATE link_rss SET title=?, link_rss=? WHERE id_link_rss=?";
 	$stmt = $link->prepare($query);
 	$stmt->bindParam(1, $JudulRSS);
 	$stmt->bindParam(2, $LinkRSS);
