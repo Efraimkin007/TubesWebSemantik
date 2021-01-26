@@ -7,10 +7,8 @@ $submitPressed = filter_input(INPUT_POST, "btnSubmit");
 if($submitPressed){
 	$JudulRSS = filter_input(INPUT_POST, "txtJudulRSS");
 	$LinkRSS = filter_input(INPUT_POST, "txtLinkRSS");
-
 	$result = insertRSS($JudulRSS, $LinkRSS);
 }
-
 
 //DELETE DATA
 $command = filter_input(INPUT_GET, "cmd");
@@ -20,7 +18,6 @@ if(isset($command) && $command == "del"){
 		$result = deleteRSS($IdLinkRSS);
 	}
 }
-
 
 //UPDATE DATA
 $submitPressed2 = filter_input(INPUT_POST,'btnSubmit2');
@@ -64,7 +61,7 @@ if($submitPressed2){
 <td><?php echo $i; $i+=1; ?></td>
 <td><?php echo $row['title']; ?></td>
 <td><a href="<?php echo $row['link_data_rss']; ?>"><?php echo $row['link_data_rss']; ?></a></td>
-<td><a href="<?php //updateRSS(); ?>" class="w3-button w3-green w3-round-large">Update</a> / <a href="<?php //deleteRSS(); ?>" class="w3-button w3-red w3-round-large">Delete</a> </td>
+<td><a href="<?php //updateRSS($row['id_link_rss']); ?>" class="w3-button w3-green w3-round-large">Update</a> / <a href="<?php //deleteRSS($row['id_link_rss']); ?>" class="w3-button w3-red w3-round-large">Delete</a> </td>
 </tr>
 </tbody>
 	<?php } ?>
