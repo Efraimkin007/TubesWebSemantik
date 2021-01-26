@@ -11,26 +11,22 @@ function selectRSS(){
 }
 
 function insertRSS($JudulRSS,$LinkRSS){
-	//CONNECT DATA
-	$link = createConnection();
-
-	//CREATE
-	$query = "INSERT INTO link_rss(title, link_data_rss) VALUES(?,?)";
-	$stmt = $link->prepare($query);
-	$stmt->bindParam(1,$JudulRSS);
-	$stmt->bindParam(2,$LinkRSS);
-	$link->beginTransaction();
-	if($stmt->execute()){
+  $link = createConnection();
+  $query = "INSERT INTO link_rss (title, link_data_rss) VALUES(?, ?);
+  $stmt = $link->prepare($query);
+  $stmt->bindParam(1,$JudulRSS);
+  $stmt->bindParam(2,$LinkRSS);
+  $link->beginTransaction();
+  if($stmt->execute()){
     $link->commit();
-	} else {
+  } else {
     $link->rollBack();
-	}
-	header("location:index.php?navito=home");
-	closeConnection($link);
-  //return $result;
+  }
+  header("location:index.php?navito=home");
+  closeConnection($link);
 }
 
-/*function updateRSS($JudulRSS, $LinkRSS, $result){
+function updateRSS($JudulRSS, $LinkRSS, $result){
 	//CONNECT DATA
 	$link = createConnection();
 
@@ -67,5 +63,4 @@ function deleteRSS($dataLinkRSS){
     $link->rollBack();
   }
   closeConnection($link);
-}*/
-?>
+}
